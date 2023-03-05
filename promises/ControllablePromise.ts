@@ -3,7 +3,7 @@ import p from 'promises-aplus-tests'
 import {TrackablePromise} from "./TrackablePromise";
 
 export class ControllablePromise<T> extends TrackablePromise<T> {
-    readonly [Symbol.toStringTag]: string = "ControllablePromise";
+    readonly [Symbol.toStringTag]: string = "#<ControllablePromise>";
 
     private constructor(p: Promise<T>, readonly releaseSignal: () => void) {
         super(p);

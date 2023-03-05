@@ -1,5 +1,5 @@
 export class TrackablePromise<T = unknown> implements Promise<T> {
-    readonly [Symbol.toStringTag]: string = "TrackablePromise";
+    readonly [Symbol.toStringTag]: string = "#<TrackablePromise>";
     private readonly children: TrackablePromise[] = []
 
     protected constructor(protected readonly wrapped: Promise<T>) {
