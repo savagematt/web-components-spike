@@ -1,5 +1,5 @@
 import * as elements from "typed-html";
-import {ssrComponent, SsrPortableWebComponent} from "../browser/HappyDomBrowser";
+import {ssrComponent, SsrPortableWebComponent} from "../PortableWebComponent";
 
 declare global {
     namespace JSX {

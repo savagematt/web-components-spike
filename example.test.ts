@@ -1,8 +1,9 @@
-import {HappyDomBrowser, PortableWebComponent} from "./browser/HappyDomBrowser";
+import {HappyDomBrowser} from "./browser/HappyDomBrowser";
 import {server} from "./server";
 import {expect} from "chai";
 import {PointlessForm} from "./components/PointlessForm";
 import {controllableFn} from "./promises/ControllablePromise";
+import {PortableWebComponent} from "./PortableWebComponent";
 
 
 const elements: PortableWebComponent[] = [PointlessForm];
