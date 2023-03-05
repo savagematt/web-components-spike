@@ -1,5 +1,3 @@
-// @ts-ignore
-import p from 'promises-aplus-tests'
 import {TrackablePromise} from "./TrackablePromise";
 
 export class ControllablePromise<T> extends TrackablePromise<T> {
