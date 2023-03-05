@@ -1,5 +1,5 @@
 import {Location, Window} from "happy-dom";
-import {Server} from "./Browser";
+import {Server} from "./HappyDomBrowser";
 
 export class RealLocation extends URL implements Location {
     constructor(

@@ -1,20 +1,18 @@
-import * as elements from "typed-html";
-import {Server} from "./browser/Browser";
+import {Server} from "./browser/HappyDomBrowser";
+import {PointlessForm} from "./components/PointlessForm";
 
-declare global {
-    namespace JSX {
-        interface MyTag {
-        }
-        interface IntrinsicElements {
-            "my-tag": MyTag;
-        }
-    }
-}
 
 export function server(): Server {
-    return async _input => {
-        return new Response(<my-tag>
-            <button id="my-button"></button>
-        </my-tag>, {status: 200});
+    return async request => {
+
+        if (typeof request === "string" && request === "/")
+            return new Response(PointlessForm.ssr("ignored"), {status: 200});
+
+        if (typeof request === "string" && request.startsWith("/api/hello"))
+            return new Response("hello " + new URL("http://whatever" + request).searchParams.get("me"), {status: 200});
+
+        console.error("404", request);
+
+        return new Response(null, {status: 404})
     };
 }
