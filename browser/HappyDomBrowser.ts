@@ -62,6 +62,10 @@ export type BrowserEnvironment = {
 
 /**
  * A WebComponent that can be registered in a browser, or in HappyDom, or wherever
+ *
+ * In the browser we'd use them like this:
+ *
+ * window.customElements.define(e.tag, e.element({window, htmlElement: HTMLElement, fetch})))
  */
 export type PortableWebComponent<Element extends typeof HTMLElement = typeof HTMLElement> = {
     tag: string,

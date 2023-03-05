@@ -5,25 +5,8 @@ import {PointlessForm} from "./components/PointlessForm";
 import {controllableFn} from "./promises/ControllablePromise";
 
 
-// export class TestScheduler implements Scheduler {
-//
-//     waitForAsync(): Promise<void> {
-//
-//     }
-//
-//     register<T>(p: Promise<T>): Promise<T> {
-//         return;
-//     }
-//
-//     timeout(ms: number): Promise<void> {
-//         return Promise.resolve(undefined);
-//     }
-// }
-
-
 const elements: PortableWebComponent[] = [PointlessForm];
-// index.ts
-// elements.forEach(e => window.customElements.define(e.tag, e.element({window, htmlElement: HTMLElement, fetch})))
+
 
 
 describe("Home page", function () {
