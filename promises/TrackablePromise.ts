@@ -19,6 +19,7 @@ export class TrackablePromise<T = unknown> implements Promise<T> {
 
     then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => (PromiseLike<TResult1> | TResult1)) | undefined | null, onrejected?: ((reason: any) => (PromiseLike<TResult2> | TResult2)) | undefined | null): Promise<TResult1 | TResult2> {
         let promise: TrackablePromise<TResult1 | TResult2>;
+        // See https://github.com/promises-aplus/promises-tests/blob/master/lib/tests/2.3.1.js
         const checkForChainsInFulfilled: ((value: T) => (PromiseLike<TResult1> | TResult1)) | undefined | null =
             typeof onfulfilled === "function"
                 ? value => {
